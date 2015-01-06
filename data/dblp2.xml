@@ -1,0 +1,635 @@
+<?xml version="1.0" ?>
+<dblp>
+    <article>
+        <author>Chan-Su Shin</author>
+        <title>Local Event Boundary Detection with Unreliable Sensors: Analysis of the Majority Vote Scheme.</title>
+        <year>2014</year>
+        <ee>http://dx.doi.org/10.1007/978-3-319-07956-1_1</ee>
+        <abstract>In this paper we study the identification of an event region X within a larger region Y, in which the sensors are distributed by a Poisson process of density λ to detect this event region, i.e., its boundary. The model of sensor is a 0-1 sensor that decides whether it lies in X or not, and which might be incorrect with probability p. It also collects information on the 0-1 values of the neighbors within some distance r and revises its decision by the majority vote of these neighbors. In the most general setting, we analyze this simple majority vote scheme and derive some upper and lower bounds on the expected number of misclassified sensors. These bounds depend on several sensing parameters of p, r, and some geometric parameters of the event region X. By making some assumptions on the shape of X, we prove a significantly improved upper bound on the expected number of misclassified sensors; especially for convex regions with sufficiently round boundary.</abstract>
+        <keyphrases>
+            <kph>sensor</kph>
+            <kph>region</kph>
+            <kph>event</kph>
+            <kph>Poisson process</kph>
+            <kph>event region</kph>
+            <kph>simple majority vote</kph>
+            <kph>boundary</kph>
+        </keyphrases>
+        <cites>
+            <cite>The Number of Fixed Points of the Majority Rule. </cite>
+            <cite>Experimental Evaluation of Expert Fusion Strategies. </cite>
+            <cite>Kreis und Kugel. </cite>
+            <cite>Analysis of the Majority Vote Scheme. </cite>
+            <cite>An Asymptotic Analysis of Some Expert Fusion Methods. </cite>
+            <cite>Localized Edge Detection in Sensor Fields. </cite>
+            <cite>Robust Event Boundary Detection in Sensor Networks–A Mixture Model Approach. </cite>
+            <cite>A Guided Tour of Chernoff Bounds. </cite>
+            <cite>An Efficient Noise-Tolerant Event and Event Boundary Detection Algorithm in Wireless Sensor Networks. </cite>
+            <cite>On Combining Classifiers. </cite>
+            <cite>On Majority Voting Games in Trees. </cite>
+            <cite>Distributed Bayesian Algorithms for Fault-Tolerant Event Region Detection in Wireless Sensor Networks. </cite>
+            <cite>A Theoretical Analysis of Six Classifier Fusion Strategies. </cite>
+            <cite>An Analysis of its Behavior and Performance. </cite>
+            <cite>The Probabilistic Method, pp. </cite>
+            <cite>Majority Consensus and the Local Majority Rule. </cite>
+            <cite>How (not) to Reach a Consensus. </cite>
+            <cite>A Framework for the Analysis of Majority Voting. </cite>
+            <cite>Theory and Methods. </cite>
+            <cite>A Review. </cite>
+            <cite>Boundary Recognition in Sensor Networks by Topological Methods. </cite>
+            <cite>Localized Outlying and Boundary Data Detection in Sensor Networks. </cite>
+            <cite>Social Structure and the Effects of Conformity. </cite>
+        </cites>
+    </article>
+    <article>
+        <author>Dani</author>
+        <title>Narrowing the Complexity Gap for Colouring (C s , P t )-Free Graphs.</title>
+        <year>2014</year>
+        <ee>http://dx.doi.org/10.1007/978-3-319-07956-1_15</ee>
+        <abstract>Let k be a positive integer. The k-Colouring problem is to decide whether a graph has a k-colouring. The k-Precolouring Extension problem is to decide whether a colouring of a subset of a graph’s vertex set can be extended to a k-colouring of the whole graph. A k-list assignment of a graph is an allocation of a list — a subset of {1,…,k} — to each vertex, and the List k -Colouring problem asks whether the graph has a k-colouring in which each vertex is coloured with a colour from its list. We prove a number of new complexity results for these three decision problems when restricted to graphs that do not contain a cycle on s vertices or a path on t vertices as induced subgraphs (for fixed positive integers s and t).</abstract>
+        <keyphrases>
+            <kph>k-Colouring problem</kph>
+            <kph>graph</kph>
+            <kph>k-Precolouring Extension problem</kph>
+            <kph>integer</kph>
+            <kph>problem</kph>
+            <kph>positive integers</kph>
+        </keyphrases>
+        <cites>
+            <cite>Graph Theory. </cite>
+            <cite>structure and bounded clique-width. </cite>
+            <cite>Three complexity results on coloring P k -free graphs. </cite>
+            <cite>Choosability in graphs. </cite>
+            <cite>Coloring graphs without short cycles and long induced paths. </cite>
+            <cite>Closing complexity gaps for coloring problems on H-free graphs. </cite>
+            <cite>Coloring the hypergraph of maximal cliques of a graph with no long path. </cite>
+            <cite>Problems from the world surrounding perfect graphs. </cite>
+            <cite>Complexity of coloring graphs without paths and cycles. </cite>
+            <cite>Deciding k-colorability of P 5-free graphs in p-time. </cite>
+            <cite>Improved complexity results on k-coloring P t -free graphs. </cite>
+            <cite>Edge dominating set and colorings on graphs with fixed clique-width. </cite>
+            <cite>Precoloring extension with fixed color bound. </cite>
+            <cite>Coverings and coloring of hypergraphs. </cite>
+            <cite>Sur le coloriage des graphes. </cite>
+            <cite>Approximating rank-width and clique-width quickly. </cite>
+            <cite>Vertex colouring and forbidden subgraphs - a survey. </cite>
+            <cite>The complexity of satisfiability problems. </cite>
+            <cite>Graph colorings with local restrictions - a survey. </cite>
+            <cite>Coloring the vertices of a graph in prescribed colors, in Diskret. </cite>
+        </cites>
+    </article>
+    <article>
+        <author>Mingyu Xiao</author>
+        <title>A New Linear Kernel for Undirected Planar Feedback Vertex Set: Smaller and Simpler.</title>
+        <year>2014</year>
+        <ee>http://dx.doi.org/10.1007/978-3-319-07956-1_26</ee>
+        <abstract>We show that any instance I of the Feedback Vertex Set problem in undirected planar graphs can be reduced to an equivalent instance I′ such that (i) the size of the instance and the size of the minimum feedback vertex set do not increase, (ii) and the size of the minimum feedback vertex set in I′ is at least \({\frac{1}{29}}\) of the number of vertices in I′. This implies a 29k kernel for this problem with parameter k being the size of the feedback vertex set. Our result improves the previous results of 97k and 112k.</abstract>
+        <keyphrases>
+            <kph>feedback</kph>
+            <kph>feedback vertex</kph>
+            <kph>Vertex Set</kph>
+            <kph>vertex</kph>
+            <kph>minimum feedback vertex</kph>
+            <kph>problem</kph>
+            <kph>Vertex Set problem</kph>
+            <kph>Set</kph>
+        </keyphrases>
+        <cites>
+            <cite>An improved kernel for the undirected planar feedback vertex set problem. </cite>
+            <cite>(Meta) kernelization. </cite>
+            <cite>A Linear Kernel for Planar Feedback Vertex Set. </cite>
+            <cite>A Cubic Kernel for Feedback Vertex Set and Loop Cutset. </cite>
+            <cite>The undirected feedback vertex set problem has a poly(k) kernel. </cite>
+            <cite>On feedback vertex set new measure and new structures. </cite>
+            <cite>Improved algorithms for feedback vertex set problems. </cite>
+            <cite>A fixed-parameter algorithm for the directed feedback vertex set problem. </cite>
+            <cite>An O(2 O(k) n 3) FPT algorithm for the undirected feedback vertex set problem. </cite>
+            <cite>Exact and enumeration algorithms. </cite>
+            <cite>Bidimensionality and kernels. </cite>
+            <cite>A guide to the theory of NP-completeness. </cite>
+            <cite>Compression-based fixed-parameter algorithms for feedback vertex set and edge bipartization. </cite>
+            <cite>Exact computation of maximum induced forest. </cite>
+            <cite>Computing minimum directed feedback vertex set in O(1.9</cite>
+            <cite>Operating System Concepts, 4th edn. </cite>
+            <cite>A 4k 2 kernel for feedback vertex set. </cite>
+            <cite>An Improved Exact Algorithm for Undirected Feedback Vertex Set. </cite>
+        </cites>
+    </article>
+    <article>
+        <author>Naoki Katoh</author>
+        <title>Multiple Sink Location Problems in Dynamic Path Networks.</title>
+        <year>2014</year>
+        <ee>http://dx.doi.org/10.1007/978-3-319-07956-1_14</ee>
+        <abstract>This paper considers the k-sink location problem in dynamic path networks. In our model, a dynamic path network consists of an undirected path with positive edge lengths, uniform edge capacity, and positive vertex supplies. Here, each vertex supply corresponds to a set of evacuees. Then, the problem requires to find the optimal location of k sinks in a given path so that each evacuee is sent to one of k sinks. Let x denote a k-sink location. Under the optimal evacuation for a given x, there exists a (k − 1)-dimensional vector d, called (k − 1)-divider, such that each component represents the boundary dividing all evacuees between adjacent two sinks into two groups, i.e., all supplies in one group evacuate to the left sink and all supplies in the other group evacuate to the right sink. Therefore, the goal is to find x and d which minimize the maximum cost or the total cost, which are denoted by the minimax problem and the minisum problem, respectively. We study the k-sink location problem in dynamic path networks with continuous model, and prove that the minimax problem can be solved in O(kn logn) time and the minisum problem can be solved in O(kn 2) time, where n is the number of vertices in the given network.</abstract>
+        <keyphrases>
+            <kph>path network</kph>
+            <kph>k-sink location problem</kph>
+            <kph>dynamic path</kph>
+            <kph>location problem</kph>
+            <kph>k-sink location</kph>
+            <kph>dynamic path networks</kph>
+            <kph>problem</kph>
+            <kph>network</kph>
+        </keyphrases>
+        <cites>
+            <cite>A relaxation-based algorithm for solving the conditional p-center problem. </cite>
+            <cite>Minimax Regret 1-Sink Location Problems in Dynamic Path Networks. </cite>
+            <cite>Constructing maximal dynamic flows from static flows. </cite>
+            <cite>Minimax Regret Sink Location Problem in Dynamic Tree Networks with Uniform Capacity. </cite>
+            <cite>Minimax Regret 1-Sink Location Problem in Dynamic Path Networks. </cite>
+            <cite>An efficient algorithm for evacuation problem in dynamic network flows with uniform arc capacity. </cite>
+            <cite>An O(n log2 n) Algorithm for the Optimal Sink Location Problem in Dynamic Tree Networks. </cite>
+        </cites>
+    </article>
+    <article>
+        <author>Yinfeng Xu</author>
+        <title>Semi-online Hierarchical Load Balancing Problem with Bounded Processing Times.</title>
+        <year>2014</year>
+        <ee>http://dx.doi.org/10.1007/978-3-319-07956-1_21</ee>
+        <abstract>In this paper, we consider the online hierarchical scheduling problem on two parallel machines, with the objective of maximizing the minimum machine load. Since no competitive algorithm exists for this problem, we consider the semi-online version with bounded processing times, in which the processing times are bounded by an interval [1,α] where α ≥ 1. We prove that no algorithm can have a competitive ratio less than 1 + α and give an optimal algorithm with the competitive ratio of 1 + α. Moreover, if we further know the sum of jobs’ processing time in advance, we prove that no algorithm can have a competitive ratio less than α where 1 ≤ α &lt; 2, and we also propose an algorithm which is shown to be optimal for the case 1 ≤ α &lt; 2.</abstract>
+        <keyphrases>
+            <kph>minimum machine load</kph>
+            <kph>hierarchical scheduling problem</kph>
+            <kph>processing times</kph>
+            <kph>hierarchical scheduling</kph>
+            <kph>online hierarchical scheduling</kph>
+            <kph>scheduling problem</kph>
+            <kph>algorithm</kph>
+        </keyphrases>
+        <cites>
+            <cite>The hierarchical model for load balancing on two machines. </cite>
+            <cite>Online and semi-online hierarchical scheduling for load balancing on uniform machines. </cite>
+            <cite>Parallel machine scheduling under a grade of service provision. </cite>
+            <cite>Optimal online algorithms for scheduling on two identical machines under a grade of service. </cite>
+            <cite>Semi-online scheduling on 2 machines under a grade of service provision with bounded processing times. </cite>
+            <cite>Semi-online scheduling with two GoS levels and unit processing time. </cite>
+            <cite>Online and semi-online scheduling of two machines under a grade of service provision. </cite>
+            <cite>Optimal algorithm for semi-online machine covering on two hierarchical machines. </cite>
+            <cite>Optimal semi-online scheduling algorithms on two parallel identical machines under a grade of service provision. </cite>
+            <cite>Semi-Online Machine Covering under a Grade of Service Provision. </cite>
+            <cite>Optimal online algorithms on two hierarchical machines with tighly-grouped processing times. </cite>
+        </cites>
+    </article>
+    <article>
+        <author>Wei-Sheng Zeng</author>
+        <title>Protein Name Recognition Based on Dictionary Mining and Heuristics.</title>
+        <year>2014</year>
+        <ee>http://dx.doi.org/10.1007/978-3-319-07956-1_8</ee>
+        <abstract>We propose a novel method that integrates dictionary, heuristics and data mining approaches to efficiently and effectively recognize exact protein names from the literature. According to the protein name dictionary and heuristic rules published in related studies, core tokens of protein names can be efficiently detected. However, exact boundaries of protein names are hard to be identified. By regarding tokens of a protein name as items within a transaction, we apply mining associations to discover significant sequential patterns (SSPs) from the protein name dictionary. Based on SSPs, protein name parts are extended from core tokens to left and right boundaries for correctly recognizing the protein name. Based on Yapex101 corpus, Protein Name Recognition System (PNRS) achieves the F-score (74.49%) better than existing systems and papers.</abstract>
+        <keyphrases></keyphrases>
+        <cites>
+            <cite>Mining association rules between sets of items in large databases. </cite>
+            <cite>Fast algorithms for mining association rules. </cite>
+            <cite>Mining sequential patterns. </cite>
+            <cite>finding gene and protein names one word at a time. </cite>
+            <cite>Extracting the names of genes and gene products with a hidden markov model. </cite>
+            <cite>A simple and practical dictionary-based approach for identification of proteins in MEDLINE abstracts. </cite>
+            <cite>Protein names and how to find them. </cite>
+            <cite>identifying protein names from biological papers. </cite>
+            <cite>Identifying protein names in scientific text. </cite>
+            <cite>Discovering patterns to extract protein-protein interactions from full texts. </cite>
+            <cite>Tuning support vector machines for biomedical named entity recognition. </cite>
+            <cite>Using BLAST for identifying gene and protein names in journal articles. </cite>
+            <cite>High-recall protein entity recognition using a dictionary. </cite>
+            <cite>A Semantics Approach. </cite>
+            <cite>Rapid and sensitive protein similarity searches. </cite>
+            <cite>a web-based thesaurus of protein and gene names. </cite>
+            <cite>Combination of text-mining algorithms increases the performance. </cite>
+            <cite>Protein names precisely peeled off free text. </cite>
+            <cite>Automatic term identification and classification in biology texts. </cite>
+            <cite>An approach to protein name extraction using heuristics and a dictionary. </cite>
+            <cite>Tagging gene and protein names in biomedical texts. </cite>
+            <cite>Integrating linguistic knowledge into a conditional random field framework to identify biomedical named entities. </cite>
+            <cite>Identification of related gene/protein names based on an HMM of name variations. </cite>
+            <cite>A machine learning approach. </cite>
+        </cites>
+    </article>
+    <article>
+        <author>Elham Roshanbin</author>
+        <title>The Competitive Diffusion Game in Classes of Graphs.</title>
+        <year>2014</year>
+        <ee>http://dx.doi.org/10.1007/978-3-319-07956-1_25</ee>
+        <abstract>We study a game based on a model for the spread of influence through social networks. In game theory, a Nash-equilibrium is a strategy profile in which each player’s strategy is optimized with respect to her opponents’ strategies. Here we focus on a specific two player case of the game. We show that there always exists a Nash-equilibrium for paths, cycles, trees, and Cartesian grids. We use the centroid of trees to find a Nash-equilibrium for a tree with a novel approach, which is simpler compared to previous works. We also explore the existence of Nash-equilibriums for uni-cyclic graphs, and offer some open problems.</abstract>
+        <keyphrases>
+            <kph>strategy profile</kph>
+            <kph>player case</kph>
+            <kph>social networks</kph>
+            <kph>game</kph>
+            <kph>Nash-equilibriums</kph>
+            <kph>game theory</kph>
+        </keyphrases>
+        <cites>
+            <cite>A note on competitive diffusion through social networks. </cite>
+            <cite>Game Theory, An Introduction, 2nd edn. </cite>
+            <cite>Maximizing Product Adoption in Social Networks. </cite>
+            <cite>Nash equilibria in Voronoi games on graphs. </cite>
+            <cite>The role of compatibility in the diffusion of technologies through social networks. </cite>
+            <cite>Maximizing the spread of influence through a social network. </cite>
+            <cite>Voronoi games on cycle graphs. </cite>
+            <cite>Nash Equilibria for Competitive Information Diffusion on Trees. </cite>
+            <cite>Information diffusion on the iterated local transitivity model of online social networks. </cite>
+            <cite>A comment on pure-strategy Nash equilibria in competitive diffusion games. </cite>
+            <cite>Introduction to Graph Theory, 2nd edn. </cite>
+            <cite>The uniform selection of free trees. </cite>
+        </cites>
+    </article>
+    <article>
+        <author>Yue-Li Wang</author>
+        <title>Edge-Clique Covers of the Tensor Product.</title>
+        <year>2014</year>
+        <ee>http://dx.doi.org/10.1007/978-3-319-07956-1_7</ee>
+        <abstract>In this paper we study the edge-clique cover number of the tensor product K n ×K n . We derive an easy lowerbound for the edge-clique number of graphs in general. We prove that, when n is prime θ e (K n ×K n ) matches the lowerbound. Moreover, we prove that θ e (K n ×K n ) matches the lowerbound if and only if a projective plane of order n exists. We also show an easy upperbound for θ e (K n ×K n ) in general, and give its limiting value when the Riemann hypothesis is true.</abstract>
+        <keyphrases>
+            <kph>edge-clique number</kph>
+            <kph>easy lowerbound</kph>
+            <kph>cover number</kph>
+            <kph>edge-clique cover</kph>
+            <kph>number</kph>
+            <kph>tensor product</kph>
+        </keyphrases>
+        <cites>
+            <cite>On the tree-degree of graphs. </cite>
+            <cite>On the order of magnitude of the difference between consecutive prime numbers. </cite>
+            <cite>Known algorithms for Edge Clique Cover are probably optimal. </cite>
+            <cite>a combinatorial problem. </cite>
+            <cite>The representation of a graph by set intersections. </cite>
+            <cite>Data reduction and exact algorithms for clique cover. </cite>
+            <cite>A simple lowerbound on edge covering by cliques. </cite>
+            <cite>Complexity of graph covering problems for graphs of low degree. </cite>
+            <cite>On economical set representations of graphs. </cite>
+            <cite>Covering edges by cliques with regard to keyword conflicts and intersection graphs. </cite>
+            <cite>A note on tensor product of graphs. </cite>
+            <cite>On the computation of the competition number of a graph. </cite>
+            <cite>Covering graphs with cliques. </cite>
+            <cite>Food webs, competition graphs, and the boxicity of ecological phase space. </cite>
+            <cite>Applications of edge coverings by cliques. </cite>
+            <cite>Bertrand’s postulate. </cite>
+            <cite>Projective plane. </cite>
+            <cite>Projective and Polar Spaces. </cite>
+        </cites>
+    </article>
+    <article>
+        <author>Rastislav Sr</author>
+        <title>Finding Robust Minimum Cuts.</title>
+        <year>2014</year>
+        <ee>http://dx.doi.org/10.1007/978-3-319-07956-1_12</ee>
+        <abstract>We study the minimum cut problem in the presence of uncertainty and show how to apply a novel robust optimization approach, which aims to exploit the similarity in subsequent graph measurements or similar graph instances, without posing any assumptions on the way they have been obtained. With experiments we show that the approach works well when compared to other approaches that are also oblivious towards the relationship between the input datasets.</abstract>
+        <keyphrases>
+            <kph>cut problem</kph>
+            <kph>minimum cut problem</kph>
+            <kph>minimum cut</kph>
+            <kph>approach</kph>
+            <kph>show</kph>
+        </keyphrases>
+        <cites>
+            <cite>Robust optimization in the presence of uncertainty. </cite>
+            <cite>Cluster Analysis for Hypertext Systems. </cite>
+            <cite>An experimental comparison of min-cut/max- flow algorithms for energy minimization in vision. </cite>
+            <cite>Counting almost minimum cutsets with reliability applications. </cite>
+            <cite>Stochastic Optimization. </cite>
+            <cite>Models, Theory, and Computation. </cite>
+            <cite>Robust Optimization. </cite>
+            <cite>Proceedings of the First Symposium on Innovations in Computer Science (ICS), pp. </cite>
+            <cite>Reoptimization of steiner trees. </cite>
+            <cite>On the complexity of the metric TSP under stability considerations. </cite>
+            <cite>/arxiv.o</cite>
+            <cite>Global min-cuts in RNC, and other ramifications of a simple min-out algorithm. </cite>
+            <cite>The complexity of counting cuts and of computing the probability that a graph is connected. </cite>
+            <cite>Computing all small cuts in an undirected network. </cite>
+            <cite>A new approach to the minimum cut problem. </cite>
+            <cite>/www.1</cite>
+            <cite>/www.m</cite>
+        </cites>
+    </article>
+    <article>
+        <author>Binhai Zhu</author>
+        <title>On the Exact Block Cover Problem.</title>
+        <year>2014</year>
+        <ee>http://dx.doi.org/10.1007/978-3-319-07956-1_2</ee>
+        <abstract>Minimum Common String Partition (MCSP) has drawn a lot of attention due to its application in genome rearrangement. The best approximation algorithm has a factor O(lognlog* n) and it was shown most recently that it is FPT (but with a very high running time). In this paper, we consider the decision version of the one-sided MCSP problem (formally called the exact block cover problem); namely, when one sequence is already partitioned into k blocks, how to decide whether the other sequence can be partitioned accordingly. While this decision problem is obviously in FPT, we show interesting results in this paper: (1) If each letter is allowed to appear at most twice (or three times), then the problem is polynomially solvable, (2) There is an FPT algorithm which runs in O *(2 k ) time, improving the trivial bound of O *(k!), and (3) If |Σ| = c, c being a constant at least 2, then the problem is NP-complete.</abstract>
+        <keyphrases>
+            <kph>Common String Partition</kph>
+            <kph>Minimum Common String</kph>
+            <kph>String Partition</kph>
+            <kph>Common String</kph>
+            <kph>Minimum Common</kph>
+            <kph>algorithm</kph>
+        </keyphrases>
+        <cites>
+            <cite>A fixed-parameter algorithm for minimum common string partition with few duplications. </cite>
+            <cite>Minimum common string partition parameterized by partition size is fixed-parameter tractable. </cite>
+            <cite>Computing the assignment of orthologous genes via genome rearrangement. </cite>
+            <cite>The greedy algorithm for the minimum common string partition problem. </cite>
+            <cite>The string edit distance matching problem with moves. </cite>
+            <cite>Minimum Common String Partition Parameterized. </cite>
+            <cite>Parameterized Complexity. </cite>
+            <cite>Parameterized Complexity Theory. </cite>
+            <cite>Exponential and polynomial time algorithms for the minimum common string partition problem. </cite>
+            <cite>A Guide to the Theory of NP-Completeness. </cite>
+            <cite>Hardness and approximations. </cite>
+            <cite>Minimum common string partition revisited. </cite>
+            <cite>The greedy algorithm for edit distance with moves. </cite>
+            <cite>Linear Time Approximation Using Hitting Set. </cite>
+            <cite>Approximating reversal distance for strings with bounded number of duplicates. </cite>
+            <cite>Approximating reversal distance for strings with bounded number of duplicates. </cite>
+        </cites>
+    </article>
+    <article>
+        <author>Adel Guitouni</author>
+        <title>A Hybrid Genetic Algorithm for Solving the Unsplittable Multicommodity Flow Problem: The Maritime Surveillance Case.</title>
+        <year>2014</year>
+        <ee>http://dx.doi.org/10.1007/978-3-319-07956-1_13</ee>
+        <abstract>Large volume surveillance missions are characterized by the employment and collaboration of several agents processing diverse information sources’ inputs in order to ensure a surveillance task. Given the time dependant relevance of the shared information, an efficient global routing policy needs to be set up to optimize information exchange in the backbone of the surveillance network. We propose to model this problem as a single path multicommodity flow problem, where several commodities are to be shared in a capacitated network. The considered objective function is to minimize the overall network congestion. As the problem is NP-Hard, a hybrid genetic approach is proposed as a solution approach. A greedy search procedure based on the nearest neighbor method is transplanted into the genetic algorithm. The empirical validation is done using a simulation environment called Inform Lab. A comparison to a state-of-the-art ant colony system approach is performed based on a real case of maritime surveillance application and some randomly generated instances. The analysis of the results obtained in the two sets was supported by statistical nonparametric Wilcoxon signed-rank tests. The experimental results show that the hybrid genetic algorithm performs consistently well for large sized problems.</abstract>
+        <keyphrases>
+            <kph>diverse information sources</kph>
+            <kph>volume surveillance missions</kph>
+            <kph>Large volume</kph>
+            <kph>surveillance</kph>
+            <kph>set</kph>
+            <kph>Large volume surveillance</kph>
+            <kph>surveillance missions</kph>
+            <kph>problem</kph>
+            <kph>volume surveillance</kph>
+        </keyphrases>
+        <cites>
+            <cite>Theory, Algorithms, and Applications. </cite>
+            <cite>From Technology to Algorithms. </cite>
+            <cite>Using branch-and-price-and-cut to solve origin-destination integer multicommodity flow problems. </cite>
+            <cite>The problem of tuning metaheuristics as seen from a machine learning perspective. </cite>
+            <cite>On the k-splittable flow problem. </cite>
+            <cite>A mathematical theory of network architectures. </cite>
+            <cite>Application to maritime domain awareness. </cite>
+            <cite>Approximation algorithms for disjoint paths problems, Ph.D</cite>
+            <cite>A New Algorithm and an Experimental Comparison. </cite>
+            <cite>An ant colony optimization metaheuristic for single-path multicommodity network flow problems. </cite>
+            <cite>Approximability of unsplittable shortest path routing problems. </cite>
+            <cite>A Multicommodity Network-Flow Problem with Side Constraints on Paths Solved by Column Generation. </cite>
+            <cite>Towards Efficient Information Exchange in Fusion Networks. </cite>
+            <cite>Using branch-and-price to solve multicommodity k-splittable flow problems. </cite>
+        </cites>
+    </article>
+    <article>
+        <author>Guohui Lin</author>
+        <title>Partially Dynamic Single-Source Shortest Paths on Digraphs with Positive Weights.</title>
+        <year>2014</year>
+        <ee>http://dx.doi.org/10.1007/978-3-319-07956-1_18</ee>
+        <abstract>We examine several structural properties of single-source shortest paths and present a local search algorithm for the partially dynamic single-source shortest paths problem. Our algorithm works on both deterministic digraphs and undirected graphs. For a deterministic digraph with positive arc weights, our algorithm handles a single arc weight increase in \(O(n+\frac{n^2\log n}{m})\) expected time, where n is the number of nodes and m is the number of edges in the digraph. Specifically, our algorithm is an O(n) expected time algorithm when m = Ω(nlogn). This solves partially an open problem proposed by Demetrescu and Italiano (Journal of the ACM. 51(2004), 968–992).</abstract>
+        <keyphrases>
+            <kph>structural properties</kph>
+            <kph>local search algorithm</kph>
+            <kph>single-source shortest paths</kph>
+            <kph>single-source shortest</kph>
+            <kph>problem</kph>
+            <kph>local search</kph>
+            <kph>algorithm</kph>
+        </keyphrases>
+        <cites>
+            <cite>Incremental algorithms for minimal length paths. </cite>
+            <cite>Fully dynamic (2 + ε) approximate all-pairs shortest paths with fast query and close to linear update time. </cite>
+            <cite>Improved dynamic algorithms for maintaining approximate shortest paths under deletions. </cite>
+            <cite>A new approach to dynamic all pairs shortest paths. </cite>
+            <cite>Experimental analysis of dynamic all pairs shortest path algorithms. </cite>
+            <cite>A note on two problems in connection with graphs. </cite>
+            <cite>The original version and Even’s version. </cite>
+            <cite>An on-line edge-deletion problem. </cite>
+            <cite>Planar graphs, negative weight edges, shortest paths, and near linear time. </cite>
+            <cite>Average update times for fully-dynamic all-pairs shortest paths. </cite>
+            <cite>Fully dynamic algorithms for maintaining all-pairs shortest paths and transitive closure in digraphs. </cite>
+            <cite>The effect of increasing or decreasing the length of a single arc on all shortest distances in a graph. </cite>
+            <cite>All-pairs shortest paths in O(n 2) time with high probability. </cite>
+            <cite>Dynamic approximate all-pairs shortest paths in undirected graphs. </cite>
+            <cite>On dynamic shortest paths problems. </cite>
+            <cite>Faster and allowing negative cycles. </cite>
+            <cite>Worst-case update times for fully-dynamic all-pairs shortest paths. </cite>
+        </cites>
+    </article>
+    <article>
+        <author>Nimrod Talmon</author>
+        <title>The Complexity of Degree Anonymization by Vertex Addition.</title>
+        <year>2014</year>
+        <ee>http://dx.doi.org/10.1007/978-3-319-07956-1_5</ee>
+        <abstract>Motivated by applications in privacy-preserving data publishing, we study the problem of making an undirected graph k-anonymous by adding few vertices (together with incident edges). That is, after adding these “dummy vertices”, for every vertex degree d in the resulting graph, there shall be at least k vertices with degree d. We explore three variants of vertex addition (justified by real-world considerations) and study their (parameterized) computational complexity. We derive mostly (worst-case) intractability results, even for very restricted cases (including trees or bounded-degree graphs) but also obtain a few encouraging fixed-parameter tractability results.</abstract>
+        <keyphrases>
+            <kph>data publishing</kph>
+            <kph>graph k-anonymous</kph>
+            <kph>vertex degree</kph>
+            <kph>undirected graph</kph>
+            <kph>dummy vertices</kph>
+            <kph>privacy-preserving data</kph>
+            <kph>study</kph>
+            <kph>incident edges</kph>
+            <kph>graphs</kph>
+        </keyphrases>
+        <cites>
+            <cite>The complexity of finding a large subgraph under anonymity constraints. </cite>
+            <cite>An algorithm for k-degree anonymity on large networks. </cite>
+            <cite>Why Waldo befriended the dummy? k-anonymization of social networks with pseudo-nodes. </cite>
+            <cite>Complexity of social network anonymization. </cite>
+            <cite>Towards identity anonymization in social networks. </cite>
+            <cite>Fundamentals of Parameterized Complexity. </cite>
+            <cite>The minimal regular graph containing a given graph. </cite>
+            <cite>Parameter ecology and the deconstruction of computational complexity. </cite>
+            <cite>Parameterized Complexity Theory. </cite>
+            <cite>A refined complexity analysis of degree anonymization in graphs. </cite>
+            <cite>Integer programming with a fixed number of variables. </cite>
+            <cite>Towards identity anonymization on graphs. </cite>
+            <cite>Matching Theory. </cite>
+            <cite>Fast identity anonymization on graphs. </cite>
+            <cite>Two NP-complete problems in nonnegative integer programming. </cite>
+            <cite>Invitation to Fixed-Parameter Algorithms. </cite>
+            <cite>Reflections on multivariate algorithmics and problem parameterization. </cite>
+            <cite>The k-anonymity and l-diversity approaches for privacy preservation in social networks against neighborhood attacks. </cite>
+        </cites>
+    </article>
+    <article>
+        <author>Kenneth W. Regan</author>
+        <title>Efficient Memoization for Approximate Function Evaluation over Sequence Arguments.</title>
+        <year>2014</year>
+        <ee>http://dx.doi.org/10.1007/978-3-319-07956-1_17</ee>
+        <abstract>This paper proposes strategies for maintaining a database of computational results of functions f on sequence arguments x, where x is sorted in non-decreasing order and f(x) has greatest dependence on the first few terms of x. This scenario applies also to symmetric functions f, where the partial derivatives approach zero as the corresponding component value increases. The goal is to pre-compute exact values f(u) on a tight enough net of sequence arguments, so that given any other sequence x, a neighboring sequence u in the net giving a close approximation can be efficiently found. Our scheme avoids pre-computing the more-numerous partial-derivative values. It employs a new data structure that combines ideas of a trie and an array implementation of a heap, representing grid values compactly in the array, yet still allowing access by a single index lookup rather than pointer jumping. We demonstrate good size/approximation performance in a natural application.</abstract>
+        <keyphrases></keyphrases>
+        <cites>
+            <cite>The History of Mathematical Tables. </cite>
+            <cite>Algorithms and Applications. </cite>
+            <cite>Memo functions and machine learning. </cite>
+            <cite>Stochastic approximation Monte Carlo for MLP learning. </cite>
+            <cite>Intrinsic chess ratings. </cite>
+            <cite>Space-efficient memo-functions. </cite>
+            <cite>Efficient memo-table management strategies. </cite>
+            <cite>Precomputation-based sequential logic optimization for low power. </cite>
+        </cites>
+    </article>
+    <article>
+        <author>Yucheng Dong</author>
+        <title>Minimax Regret k-sink Location Problem in Dynamic Path Networks.</title>
+        <year>2014</year>
+        <ee>http://dx.doi.org/10.1007/978-3-319-07956-1_3</ee>
+        <abstract>Recently, Cheng et al. [1] proposed the minimax regret 1-sink location problem in dynamic path networks and presented an O(nlog2 n) time algorithm for the proposed problem, where n is the number of vertices. In this paper, we study the general problem, i.e., minimax regret k-sink location problem in the dynamic path networks. Based on the algorithm for the 1-sink location problem, we design an \(O(n^2(\log n)^{1+\log k}C_n^{k-1})\) time algorithm for the general problem, where \(C_n^{k-1}\) is the number of combination choosing k − 1 from n.</abstract>
+        <keyphrases></keyphrases>
+        <cites>
+            <cite>Minimax regret 1-sink location problems in dynamic path networks. </cite>
+            <cite>Minimax regret sink location problems in dynamic tree networks with uniform capacity. </cite>
+            <cite>Minimax regret 2-sink location problem in dynamic path networks. </cite>
+            <cite>An O(n log2 n) algorithm for the optimal sink location problem in dynamic tree networks. </cite>
+            <cite>Minimax regret 1-facility location on uncertain path networks. </cite>
+        </cites>
+    </article>
+    <article>
+        <author>Yixin Xu</author>
+        <title>The Garden Hose Complexity for the Equality Function.</title>
+        <year>2014</year>
+        <ee>http://dx.doi.org/10.1007/978-3-319-07956-1_11</ee>
+        <abstract>The garden hose complexity is a new communication complexity introduced by H. Buhrman, S. Fehr, C. Schaffner and F. Speelman [BFSS13] to analyze position-based cryptography protocols in the quantum setting. We focus on the garden hose complexity of the equality function, and improve on the bounds of O. Margalit and A. Matsliah [MM12] with the help of a new approach and of our handmade simulated annealing based solver. We have also found beautiful symmetries of the solutions that have lead us to develop the notion of garden hose permutation groups. Then, exploiting this new concept, we get even further, although several interesting open problems remain.</abstract>
+        <keyphrases>
+            <kph>hose</kph>
+            <kph>garden hose</kph>
+            <kph>garden hose complexity</kph>
+            <kph>hose complexity</kph>
+            <kph>garden</kph>
+            <kph>new communication</kph>
+        </keyphrases>
+        <cites>
+            <cite>Impossibility and Constructions. </cite>
+            <cite>Position-Based Quantum Cryptography. </cite>
+            <cite>The garden-hose model. </cite>
+            <cite>Position Based Cryptography. </cite>
+            <cite>Mage - the CDCL SAT solver developed and used by IBM for formal verification. </cite>
+            <cite>Rooted trees and iterated wreath products of cyclic groups. </cite>
+            <cite>/www.g</cite>
+        </cites>
+    </article>
+    <article>
+        <author>Yong Zhang</author>
+        <title>Competitive Algorithms for Unbounded One-Way Trading.</title>
+        <year>2014</year>
+        <ee>http://dx.doi.org/10.1007/978-3-319-07956-1_4</ee>
+        <abstract>In the one-way trading problem, a seller has some product to be sold to a sequence σ of buyers u 1, u 2, …, u σ arriving online and he needs to decide, for each u i , the amount of product to be sold to u i at the then-prevailing market price p i . The objective is to maximize the seller’s revenue. We note that most previous algorithms for the problem need to impose some artificial upper bound M and lower bound m on the market prices, and the seller needs to know either the values of M and m, or their ratio M/m, at the outset. Moreover, the performance guarantees provided by these algorithms depend only on M and m, and are often too loose; for example, given a one-way trading algorithm with competitive ratio Θ(log(M/m)), its actual performance can be significantly better when the actual highest to actual lowest price ratio is significantly smaller than M/m.</abstract>
+        <keyphrases>
+            <kph>then-prevailing market price</kph>
+            <kph>one-way trading problem</kph>
+            <kph>one-way trading</kph>
+            <kph>market price</kph>
+            <kph>trading</kph>
+        </keyphrases>
+        <cites>
+            <cite>Dynamic Pricing with Limited Supply. </cite>
+            <cite>posted price mechanisms for online procurement. </cite>
+            <cite>Item pricing for revenue maximization. </cite>
+            <cite>Near-optimal online auctions. </cite>
+            <cite>Welfare and Profit Maximization with Production Costs. </cite>
+            <cite>Online Computation and Competitive Analysis. </cite>
+            <cite>Approximation schemes for sequential posted pricing in multi-unit auctions. </cite>
+            <cite>Dynamic and non-uniform pricing strategies for revenue maximization. </cite>
+            <cite>Optimal buy-and-hold strategies for financial markets with bounded daily returns. </cite>
+            <cite>Competitive analysis of financial games. </cite>
+            <cite>Optimal search and one-way trading online algorithms. </cite>
+            <cite>Average-case competitive analyses for one-way trading. </cite>
+            <cite>On the Competitive Ratio of Online Sampling Auctions. </cite>
+            <cite>Optimal algorithms for k-search with application in option pricing. </cite>
+            <cite>Optimal auction design. </cite>
+            <cite>Competitive Algorithms for Online Pricing. </cite>
+            <cite>Online pricing for bundles of multiple items. </cite>
+        </cites>
+    </article>
+    <article>
+        <author>Leizhen Cai</author>
+        <title>Obtaining Split Graphs by Edge Contraction.</title>
+        <year>2014</year>
+        <ee>http://dx.doi.org/10.1007/978-3-319-07956-1_19</ee>
+        <abstract>We study the parameterized complexity of the following Split Contraction problem: Given a graph G and an integer k as parameter, determine whether G can be modified into a split graph by contracting at most k edges. We show that Split Contraction can be solved in FPT time \(2^{O(k^2)}n^5\) , but admits no polynomial kernel unless NP ⊆ coNP/poly.</abstract>
+        <keyphrases>
+            <kph>Split</kph>
+            <kph>Split Contraction</kph>
+            <kph>Contraction</kph>
+        </keyphrases>
+        <cites>
+            <cite>Parameterized Complexity of Two Edge Contraction Problems with Degree Constraints. </cite>
+            <cite>On problems without polynomial kernels. </cite>
+            <cite>Fixed-parameter tractability of graph modification problems for hereditary properties. </cite>
+            <cite>Contracting few edges to remove forbidden induced subgraphs. </cite>
+            <cite>Interval deletion is fixed-parameter tractable. </cite>
+            <cite>A 2k kernel for the cluster editing problem. </cite>
+            <cite>On fixed-parameter algorithms for split vertex deletion. </cite>
+            <cite>Incompressibility through colors and iDs. </cite>
+            <cite>Faster parameterized algorithms for deletion to split graphs. </cite>
+            <cite>Increasing the minimum degree of a graph by contractions. </cite>
+            <cite>Obtaining planarity by contracting few edges. </cite>
+            <cite>A faster FPT algorithm for bipartite contraction. </cite>
+            <cite>Split and related graphs. </cite>
+            <cite>Contracting graphs to paths and trees. </cite>
+            <cite>Obtaining a bipartite graph by contracting few edges. </cite>
+            <cite>Phylogenetic k-root and steiner k-root. </cite>
+            <cite>On the hardness of eliminating small induced subgraphs by contracting edges. </cite>
+        </cites>
+    </article>
+    <article>
+        <author>Myra Spiliopoulou</author>
+        <title>Hoeffding-CF: Neighbourhood-Based Recommendations on Reliably Similar Users.</title>
+        <year>2014</year>
+        <ee>http://dx.doi.org/10.1007/978-3-319-08786-3_13</ee>
+        <abstract>Neighbourhood-based collaborative filtering recommenders exploit the common ratings among users to identify a user’s most similar neighbours. It is known that decisions made on a naive computation of user similarity are unreliable, because the number of co-ratings varies strongly among users. In this paper, we formalize the notion of reliable similarity between two users and propose a method that constructs a user’s neighbourhood by selecting only those users that are reliably similar to her. Our method combines a statistical test and the notion of a baseline user. We report our results on typical benchmark datasets.</abstract>
+        <keyphrases>
+            <kph>users</kph>
+            <kph>similar neighbours</kph>
+            <kph>user similarity</kph>
+            <kph>common ratings</kph>
+            <kph>user'</kph>
+            <kph>Neighbourhood-based collaborative</kph>
+            <kph>naive computation</kph>
+            <kph>collaborative filtering</kph>
+        </keyphrases>
+        <cites>
+            <cite>Locally Adaptive Neighborhood Selection for Collaborative Filtering Recommendations. </cite>
+            <cite>Modeling relationships at multiple scales to improve accuracy of large recommender systems. </cite>
+            <cite>Mining High Speed Data Streams. </cite>
+            <cite>An algorithmic framework for performing collaborative filtering. </cite>
+            <cite>Probability inequalities for sums of bounded random variables. </cite>
+            <cite>An automatic weighting scheme for collaborative filtering. </cite>
+            <cite>Effective missing data prediction for collaborative filtering. </cite>
+            <cite>Trust-aware bootstrapping of recommender systems. </cite>
+            <cite>Recommender Systems Handbook. </cite>
+            <cite>Evaluating Recommendation Systems. </cite>
+        </cites>
+    </article>
+    <article>
+        <author>Elisabeth Andr</author>
+        <title>Trust-Based Decision-Making for Energy-Aware Device Management.</title>
+        <year>2014</year>
+        <ee>http://dx.doi.org/10.1007/978-3-319-08786-3_29</ee>
+        <abstract>Smart energy systems are able to support users in saving energy by controlling devices, such as lights or displays, depending on context information, such as the brightness in a room or the presence of users. However, proactive decisions should also match the users’ preferences to maintain users’ trust in the system. Wrong decisions could negatively influence users’ acceptance of a system and at worst could make them abandon the system. In this paper, a trust-based model, called User Trust Model (UTM), for automatic decision-making is proposed, which is based on Bayesian Networks. The UTM’s construction, the initialization with empirical data gathered in an online survey, and its integration in an office setting are described. Furthermore, the results of a user study investigating users’ experience and acceptance are presented.</abstract>
+        <keyphrases>
+            <kph>User</kph>
+            <kph>energy systems</kph>
+            <kph>Smart energy</kph>
+            <kph>Smart energy systems</kph>
+            <kph>support users</kph>
+        </keyphrases>
+        <cites>
+            <cite>Four decades of domestic energy inquiry. </cite>
+            <cite>Mapping the landscape of sustainable hci. </cite>
+            <cite>Tailoring feedback to users’ actions in a persuasive game for household electricity conservation. </cite>
+            <cite>the design of a pervasive game for office spaces. </cite>
+            <cite>Exploring issues of user model transparency and proactive behaviour in an office environment control system. </cite>
+            <cite>From Social Trust to Digital Trust. </cite>
+            <cite>Trust in distributed artificial intelligence. </cite>
+            <cite>Bayesian network trust model in peer-to-peer networks. </cite>
+            <cite>An evidential model of distributed reputation management. </cite>
+            <cite>A probabilistic model for trust and reputation. </cite>
+            <cite>Trust network analysis with subjective logic. </cite>
+            <cite>A Socio-Cognitive and Computational Model. </cite>
+            <cite>A game theoretic approach. </cite>
+            <cite>Trust decision-making in multi-agent systems. </cite>
+            <cite>A survey of trust in social networks. </cite>
+            <cite>A review of trust in online social networks to explore new research agenda. </cite>
+            <cite>Measuring behavioral trust in social networks. </cite>
+            <cite>Comparative study of trust modeling for automatic landmark tagging. </cite>
+            <cite>Toward establishing trust in adaptive agents. </cite>
+            <cite>A modern approach, 2nd edn. </cite>
+            <cite>Trust management of ubiquitous multi-display environments. </cite>
+            <cite>Proc. </cite>
+            <cite>The Automatic Trust Management of Self-Adaptive Multi-Display Environments. </cite>
+            <cite>A survey of westin’s studies. </cite>
+            <cite>Dimensionality of information disclosure behavior. </cite>
+        </cites>
+    </article>
+</dblp>

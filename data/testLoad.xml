@@ -1,0 +1,41 @@
+<dblp>
+<article>
+	<author>Chan-Su Shin</author>
+	<title>Local Event Boundary Detection with Unreliable Sensors: Analysis of the Majority Vote Scheme.</title>
+	<year>2014</year>
+	<ee>http://dx.doi.org/10.1007/978-3-319-07956-1_1</ee>
+	<abstract>In this paper we study the identification of an event region X within a</abstract>
+	<keyphrases>
+		<kph>sensor</kph>
+		<kph>region</kph>
+		<kph>event</kph>
+		<kph>Poisson process</kph>
+		<kph>event region</kph>
+		<kph>simple majority vote</kph>
+		<kph>boundary</kph>
+	</keyphrases>
+	<cites>
+		<cite>The Number of Fixed Points of the Majority Rule. </cite>
+		<cite>Experimental Evaluation of Expert Fusion Strategies. </cite>
+		<cite>Kreis und Kugel. </cite>
+	</cites>
+</article>
+<article>
+	<author>aaa</author>
+	<title>aaa</title>
+	<year>2014</year>
+	<ee>http://dx.doi.org/10.1007/978-3-319-07956-1_1aaa</ee>
+	<abstract>aaa</abstract>
+	<keyphrases>
+		<kph>aa</kph>
+		<kph>aab</kph>
+		<kph>aac</kph>
+		<kph>aaad</kph>
+	</keyphrases>
+	<cites>
+		<cite>aa1</cite>
+		<cite>aa2</cite>
+		<cite>aa2</cite>
+	</cites>
+</article>
+</dblp>
