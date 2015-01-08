@@ -1,13 +1,7 @@
 package pcw;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -17,24 +11,25 @@ import org.xml.sax.SAXException;
 
 import pcw.parsers.*;
 import pcw.parsins.*;
-import pcw.utils.Article;
 
 public class PCW {
 	
-	public static List<Article> articles;
-
 	public static void main(String[] args) {
+		
 		SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
 		try {
 			SAXParser saxParser = saxParserFactory.newSAXParser();
-			//saxParser.parse(new File("data/dblp.xml"), new Parsing());
+			saxParser.parse(new File("data/dblp.xml"), new Parsing());
 			saxParser.parse(new File("data/dblp2.xml"), new ParsingStep2());
-			//saxParser.parse(new File("data/testLoad.xml"), new LoadArticles());
-			saveArticles();
 		}
 		catch (ParserConfigurationException | SAXException | IOException e) {
 			e.printStackTrace();
 		}
+		
+		
+		//library = new Library();
+		
+		//MetricUtils.demo();
 	}
 
 	public void demo() {
@@ -69,35 +64,5 @@ public class PCW {
 
 	
 	
-	/**
-	 * Salva gli articoli nel file data/articles.ser per non dover ricostruire gli articoli dall'xml
-	 */
- 	public static void saveArticles() {
- 		try {
- 			FileOutputStream fileOut = new FileOutputStream("data/articles.ser");
- 			ObjectOutputStream out = new ObjectOutputStream(fileOut);
- 			out.writeObject(articles);
- 			out.close();
- 			fileOut.close();
- 		} catch (IOException e) {
- 			e.printStackTrace();
- 		}	
- 	}
- 	/**
- 	 * Carica gli articoli serializzati nel file data/articles.ser
- 	 */
- 	@SuppressWarnings("unchecked")
- 	public static void loadArticles() {
- 		try {
- 			FileInputStream fileIn = new FileInputStream("data/articles.ser");
- 			ObjectInputStream in = new ObjectInputStream(fileIn);
- 			articles = (ArrayList<Article>) in.readObject();
- 			in.close();
- 			fileIn.close();
- 		} catch (IOException e) {
- 	       articles = new ArrayList<Article>();
- 	    } catch (ClassNotFoundException e) {
- 	         e.printStackTrace();
- 	    }
- 	}
+
 }

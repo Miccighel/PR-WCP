@@ -6,8 +6,8 @@ import java.util.List;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
-import pcw.PCW;
 import pcw.utils.Article;
+import pcw.utils.Library;
 
 public class LoadArticles extends DefaultHandler {
 	
@@ -66,7 +66,7 @@ public class LoadArticles extends DefaultHandler {
 			article = new Article();
 		}
 		if (qName.equals("dblp"))
-			PCW.articles = articlesList;
+			Library.getInstance().setArticleList(articlesList);
 	}
 
 }

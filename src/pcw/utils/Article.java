@@ -9,6 +9,7 @@ public class Article implements Serializable {
 	private static final long serialVersionUID = 2751605655130789015L;
 	private String author, title, year, ee, abs, type, id;
 	private List<String> cites, keyphrases;
+	private boolean[] keyphrasesVector;
 	
 	public Article() {
 		author=""; title=""; year=""; ee=""; abs = ""; type=""; id="";
@@ -43,6 +44,9 @@ public class Article implements Serializable {
 	public void setId(String i) {
 		this.id = i;
 	}
+	public void setKeyphrasesVector(boolean[] v) {
+		this.keyphrasesVector = v;
+	}
 	
 	public String getType(){
 	    return type;
@@ -70,6 +74,9 @@ public class Article implements Serializable {
 	}
 	public String getId() {
 		return id;
+	}
+	public boolean[] getKeyphrasesVector() {
+		return this.keyphrasesVector;
 	}
 	
 	@Override
