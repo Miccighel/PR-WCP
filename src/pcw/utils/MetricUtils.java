@@ -1,6 +1,7 @@
 package pcw.utils;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author manolisa
@@ -14,7 +15,8 @@ public class MetricUtils {
 
         public static void demo() {
                 // Rank:
-                Double[] ranking = new Double[] { 3d, 2d, 3d, 0d, 1d, 2d };
+                //Double[] ranking = new Double[] { 3d, 2d, 3d, 0d, 1d, 2d };
+        		double[] ranking = new double[] { 0d, 1d, 2d, 3d };
 
                 // LEXICOGRAPHIC ORDERING:
                 double lexScore = lex(ranking);
@@ -29,8 +31,8 @@ public class MetricUtils {
                 System.out.println("NDCG = " + ndcgScore);
         }
 
-        public static double lex(Double[] orgRanking) {
-                Double[] ranking = new Double[orgRanking.length];
+        public static double lex(double[] orgRanking) {
+                double[] ranking = new double[orgRanking.length];
                 for(int i = 0 ; i < orgRanking.length ; i++){
                         ranking[i] = orgRanking[i]; 
                 }
@@ -53,7 +55,7 @@ public class MetricUtils {
          *            the ranking evaluation
          * @return the DCG score for the ranking
          */
-        public static double dcg(Double[] ranking) {
+        public static double dcg(double[] ranking) {
                 double score = 0;
                 for (int i = 1; i < ranking.length; i++) {
                         score += calcDcgForPos(ranking[i], i + 1);
@@ -83,8 +85,8 @@ public class MetricUtils {
          *            the ranking evaluation
          * @return the NDCG score for the ranking
          */
-        public static double ndcg(Double[] orgRanking) {
-                Double[] ranking = new Double[orgRanking.length];
+        public static double ndcg(double[] orgRanking) {
+                double[] ranking = new double[orgRanking.length];
                 for(int i = 0 ; i < orgRanking.length ; i++){
                         ranking[i] = orgRanking[i]; 
                 }
@@ -98,8 +100,8 @@ public class MetricUtils {
          *            the ranking evaluation
          * @return the sorted array
          */
-        public static Double[] reverseSortDesc(Double[] ranking) {
-                Double[] reverseSorted = new Double[ranking.length];
+        public static double[] reverseSortDesc(double[] ranking) {
+                double[] reverseSorted = new double[ranking.length];
                 Arrays.sort(ranking);
                 int arrLen = ranking.length;
                 for (int i = arrLen - 1; i >= 0; i--) {
@@ -116,7 +118,7 @@ public class MetricUtils {
          *            the ranking evaluation
          * @return the ERR score
          */
-        public static double err(Double[] orgRanking) {
+        public static double err(double[] orgRanking) {
                 Double[] ranking = new Double[orgRanking.length];
                 for(int i = 0 ; i < orgRanking.length ; i++){
                         ranking[i] = orgRanking[i]; 
@@ -133,4 +135,39 @@ public class MetricUtils {
                 return errScore;
         }
 
+        
+        /**
+         * precision = | {relevant documents} intersecato {retrieved documents} |  /  | {retrieved documents} |
+         * @return
+         */
+        public static double precision(Article article, List<Article> retrievedDocuments) {
+        	int relevantDocumentsFound = 0;
+        	for (Article a : retrievedDocuments)
+        		if (article.getCites().contains(a));
+        			relevantDocumentsFound++;
+        	return relevantDocumentsFound / retrievedDocuments.size();
+        }
+        
+        /**
+         * recall = | {relevant documents} intersecato {retrieved documents} |  /  | {relevan documents} |
+         * @return
+         */
+        public static double recall(Article article, List<Article> retrievedDocuments) {
+        	int relevantDocumentsFound = 0;
+        	for (Article a : retrievedDocuments)
+        		if (article.getCites().contains(a));
+        			relevantDocumentsFound++;
+        	return article.getCitesStringList().size() != 0 ? relevantDocumentsFound / article.getCitesStringList().size() : 0;
+        }
+        
+        /**
+         * F-score is a measure of a test's accuracy. It considers both the precision p and the recall r of the test to compute the score. 
+         * Can be interpreted as a weighted average of the precision and recall.
+         * @return a number between 0 and 1, where 1 is best and 0 is worst
+         */
+        public static double fScore(Article article, List<Article> retrievedDocuments) {
+        	double precision = precision(article, retrievedDocuments);
+        	double recall = recall(article, retrievedDocuments);
+        	return 2 * (precision * recall) / (precision + recall);
+        }
 }

@@ -1,4 +1,4 @@
-package pcw.parsins;
+package pcw.parsing;
 
 import java.io.IOException;
 import java.util.regex.Matcher;

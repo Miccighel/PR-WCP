@@ -1,4 +1,4 @@
-package pcw.utils;
+package pcw.module;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,12 +18,13 @@ import javax.xml.parsers.SAXParserFactory;
 
 import org.xml.sax.SAXException;
 
-import pcw.parsins.LoadArticles;
+import pcw.parsing.LoadArticles;
+import pcw.utils.Article;
 
 public class Library {
 	
 	private List<Article> articles;
-	private boolean[][] keyphrasesMatrix;
+	private boolean[][] keyphrasesMatrix; // Term-Document Frequency Matrix
 	private boolean[][] citationsMatrix;
 	private static Library instance;
 	ArrayList<String> allKeyphrases;
@@ -39,28 +40,47 @@ public class Library {
 		if ((new File("data/articles.ser")).exists())
 			this.loadArticles();
 		else {
+			System.out.println("data/articles.ser non trovato, costruisco la lista degli articoli...");
 			SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
 			try {
 				SAXParser saxParser = saxParserFactory.newSAXParser();
-				saxParser.parse(new File("data/testLoad.xml"), new LoadArticles()); // TODO cambiare col file del dataset
+				saxParser.parse(new File("data/dataset2.xml"), new LoadArticles(this)); // TODO cambiare col file del dataset
 			}
 			catch (ParserConfigurationException | SAXException | IOException e) {
 				e.printStackTrace();
 			}
+			System.out.println("Completato, miglioro gli articoli della lista...");
+			improveArticles();
+			System.out.println("Miglioramento completato");
 			this.saveArticles();
 		}
 		
-		if (!(new File("data/articles.ser")).exists() 
-				&& !(new File("data/keyphrasesMatrix.ser")).exists() 
+		if (!(new File("data/keyphrasesMatrix.ser")).exists() 
 				&& (!(new File("data/citationsMatrix.ser")).exists())) {
+			System.out.println("Matrici non trovate, costruisco le matrici delle keyphrase e delle citazioni...");
 			buildKeyphrasesMatrix(articles);
+			System.out.println("Matrice delle keyphrase costruita");
 			buildCitationsMatrix(articles);
+			System.out.println("Matrice delle citazioni costruita");
 			this.saveMatrix();
+			this.saveArticles();
 		}
 		else
 			loadMatrixes();
 	}
 	
+	private void improveArticles() {
+		for (Article a : this.articles)
+			for (String citTitle : a.getCitesStringList())
+				a.addCite(this.getArticleFromTitle(citTitle));
+	}
+	private Article getArticleFromTitle(String title) {
+		for (Article article : this.articles)
+			if (article.getTitle().equalsIgnoreCase(title))
+				return article;
+		return null;
+	}
+
 	public void setArticleList(List<Article> list) {
 		this.articles = list;
 	}
@@ -96,11 +116,12 @@ public class Library {
 	private void buildKeyphrasesMatrix(List<Article> list) {
 		allKeyphrases = new ArrayList<String>();
 		Set<String> keySet = new HashSet<String>();
-		
+		int count = 0;
 		// unisco e ordino tutte le keyphrase
 		for (Article article : list)
 			for (String keyphrase : article.getKeyphrases())
-				keySet.add(keyphrase);
+				if (!keySet.add(keyphrase)) count++;
+		System.out.println("keyphrases in comune: " + count);
 		allKeyphrases.addAll(keySet);
 		Collections.sort(allKeyphrases);
 		
@@ -125,12 +146,15 @@ public class Library {
 	 * cite4           1            0            0
 	 */
 	private void buildCitationsMatrix(List<Article> list) {
+		// TODO: fare la matrice quadrata prendendo solo i campi title
 		ArrayList<String> allCitations = new ArrayList<String>();
 		Set<String> citationsSet = new HashSet<String>();
+		int count = 0;
 		
 		for (Article article : list)
-			for (String cite : article.getCites())
-				citationsSet.add(cite);
+			for (String cite : article.getCitesStringList())
+				if (!citationsSet.add(cite)) count++;
+		System.out.println("citazioni in comune: " + count);
 		allCitations.addAll(citationsSet);
 		Collections.sort(allCitations);
 		
@@ -139,57 +163,13 @@ public class Library {
 		// costruisco la matrice
 		for (int i=0; i<list.size(); i++) {
 			Article article = list.get(i);
-			List<String> citationsList = article.getCites();
+			List<String> citationsList = article.getCitesStringList();
 			for (int j=0; j<allCitations.size(); j++)
 				citationsMatrix[i][j] = citationsList.contains(allCitations.get(j));
 		}
 	}
 
 
-	/**
-	 * Restituisce gli articoli piu' simili a quelli passati in ingresso ordinati per somiglianza
-	 */
-	public List<Article> getNeighbours(boolean[] userVector, int numOfNeighbours) {
-		double[] similarities = new double[userVector.length];
-		
-		for (int i=0; i<this.keyphrasesMatrix.length; i++)
-			similarities[i] = similarity(userVector, keyphrasesMatrix[i]);
-		
-		List<Article> out = new ArrayList<Article>();
-		for (int i=0; i<numOfNeighbours+1; i++) {
-			int index = indexOfMax(similarities);
-			out.add(articles.get(index));
-			similarities[index] = 0;
-		}
-		out.remove(0); // l'articolo piu' simile e' se stesso, quindi lo tolgo
-		
-		return out;
-	}
-	
-	// Similarity (%) = 100 * (commonItems * 2) / (total item in vector1 + total item in vector2)
-	public double similarity(boolean[] v, boolean[] s) {
-		int commonItems = 0;
-		int itemsInV = 0;
-		int itemsInS = 0;
-		
-		if (v.length != s.length)
-			return 0;
-		
-		for (int i=0; i<v.length; i++) {
-			if (v[i])
-				itemsInV++;
-			if (s[i])
-				itemsInS++;
-			if (v[i] && s[i])
-				commonItems++;
-		}
-		
-		return 100 * ( (2 * commonItems) / (itemsInV + itemsInS));
-	}
-	public void rankNeighbours(boolean[] userVector) {
-		// TODO ?
-	}
-	
 	/**
 	 * Restituisce l'indice nella lista dell'articolo cercato, -1 se non trova l'articolo
 	 */
@@ -202,17 +182,7 @@ public class Library {
 				index++;
 		return -1;
 	}
-	private int indexOfMax(double[] a) {
-		int index = -1;
-		double max = -1;
-		for (int i=0; i<a.length; i++)
-			if (a[i] > max) {
-				index = i;
-				max = a[i];
-			}
-		return index;
-	}
-
+	
 	
 	public void saveArticles() {
 		try {

@@ -1,7 +1,7 @@
 package pcw.user;
 
+import pcw.module.Library;
 import pcw.utils.Article;
-import pcw.utils.Library;
 
 public class User {
 

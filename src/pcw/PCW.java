@@ -1,35 +1,19 @@
 package pcw;
 
-import java.io.File;
-import java.io.IOException;
+import java.util.List;
 
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-
-import org.xml.sax.SAXException;
-
+import pcw.module.Library;
+import pcw.module.Recommendation;
 import pcw.parsers.*;
-import pcw.parsins.*;
+import pcw.utils.Article;
+import pcw.utils.MetricUtils;
 
 public class PCW {
 	
+	public static final int NUM_OF_RECCOMANDATIONS = 10;
+	
 	public static void main(String[] args) {
-		
-		SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
-		try {
-			SAXParser saxParser = saxParserFactory.newSAXParser();
-			saxParser.parse(new File("data/dblp.xml"), new Parsing());
-			saxParser.parse(new File("data/dblp2.xml"), new ParsingStep2());
-		}
-		catch (ParserConfigurationException | SAXException | IOException e) {
-			e.printStackTrace();
-		}
-		
-		
-		//library = new Library();
-		
-		//MetricUtils.demo();
+		testEvaluation(Library.getInstance().getArticleList().get(1));
 	}
 
 	public void demo() {
@@ -62,7 +46,23 @@ public class PCW {
 		System.out.println("FINE CITAZIONI (VETTORE)");
 	}
 
-	
+	public static void testEvaluation(Article article) {
+		List<Article> reccomended = Recommendation.getArticleNeighbours(article, NUM_OF_RECCOMANDATIONS);
+		double[] sortedSimilarity = Recommendation.getArticleSortedNeighboursSimilarity(article, NUM_OF_RECCOMANDATIONS);
+		
+		System.out.println("Articolo in esame:\n\n" + article.toString() +"\n\n----------\n");
+		
+		System.out.println("dcg: "+MetricUtils.dcg(sortedSimilarity));
+		System.out.println("ndcg: "+MetricUtils.ndcg(sortedSimilarity));
+		System.out.println("precision: +"+MetricUtils.precision(article, reccomended));
+		System.out.println("recall: "+MetricUtils.recall(article, reccomended));
+		System.out.println("f-score: "+MetricUtils.fScore(article, reccomended) + "\n\n");
+		
+		System.out.println("Articoli simili:\n\n");
+		
+		for (int i=0; i<reccomended.size(); i++)
+			System.out.println("Posizione " + (i+1) + ", somiglianza: " + sortedSimilarity[i] + "\n"+reccomended.get(i).toString() + "\n\n");
+	}
 	
 
 }

@@ -1,4 +1,4 @@
-package pcw.parsins;
+package pcw.parsing;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

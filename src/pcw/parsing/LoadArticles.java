@@ -1,4 +1,4 @@
-package pcw.parsins;
+package pcw.parsing;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
+import pcw.module.Library;
 import pcw.utils.Article;
-import pcw.utils.Library;
 
 public class LoadArticles extends DefaultHandler {
 	
@@ -16,8 +16,12 @@ public class LoadArticles extends DefaultHandler {
 	List<Article> articlesList = new ArrayList<Article>();
 	List<String> cites = new ArrayList<String>();
 	List<String> keyphrases = new ArrayList<String>();
+	private Library library;
 	
-	
+	public LoadArticles(Library library) {
+		this.library = library;
+	}
+
 	public void startElement(String uri, String localName, String qName, Attributes attributes) {
 		switch (qName) {
 			case "author": flagAuthor = true; break;
@@ -62,11 +66,10 @@ public class LoadArticles extends DefaultHandler {
 	public void endElement(String uri, String localName, String qName) {
 		if (qName.equals("article")) {
 			articlesList.add(article);
-			System.out.println(article.toString());
 			article = new Article();
 		}
 		if (qName.equals("dblp"))
-			Library.getInstance().setArticleList(articlesList);
+			this.library.setArticleList(articlesList);
 	}
 
 }

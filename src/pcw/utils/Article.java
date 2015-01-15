@@ -8,13 +8,15 @@ public class Article implements Serializable {
 
 	private static final long serialVersionUID = 2751605655130789015L;
 	private String author, title, year, ee, abs, type, id;
-	private List<String> cites, keyphrases;
+	private List<String> citesString, keyphrases;
+	private List<Article> citesArticle;
 	private boolean[] keyphrasesVector;
 	
 	public Article() {
 		author=""; title=""; year=""; ee=""; abs = ""; type=""; id="";
-		cites = new ArrayList<String>();
+		citesString = new ArrayList<String>();
 		keyphrases = new ArrayList<String>();
+		citesArticle = new ArrayList<Article>();
 	}
 	
 	public void setType(String type){
@@ -39,7 +41,11 @@ public class Article implements Serializable {
 		this.keyphrases.add(keyphrase);
 	}
 	public void addCite(String cite) {
-		this.cites.add(cite);
+		this.citesString.add(cite);
+	}
+	public void addCite(Article a) {
+		if (a != null)
+			this.citesArticle.add(a);
 	}
 	public void setId(String i) {
 		this.id = i;
@@ -69,8 +75,11 @@ public class Article implements Serializable {
 	public List<String> getKeyphrases() {
 		return keyphrases;
 	}
-	public List<String> getCites() {
-		return cites;
+	public List<String> getCitesStringList() {
+		return citesString;
+	}
+	public List<Article> getCites() {
+		return this.citesArticle;
 	}
 	public String getId() {
 		return id;
@@ -85,8 +94,8 @@ public class Article implements Serializable {
 		for (String s : keyphrases)
 			out += "\n- " + s;
 		out += "\nCites:";
-		for (String s : cites)
+		for (String s : citesString)
 			out += "\n- " + s;
-		return out + "\nType: "+type+"\nID "+id;
+		return out;
 	}
 }
