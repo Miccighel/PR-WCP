@@ -2,6 +2,7 @@ package pcw.utils;
 
 import java.util.Arrays;
 import java.util.List;
+import pcw.module.Library;
 
 /**
  * @author manolisa
@@ -140,11 +141,14 @@ public class MetricUtils {
          * precision = | {relevant documents} intersecato {retrieved documents} |  /  | {retrieved documents} |
          * @return
          */
-        public static double precision(Article article, List<Article> retrievedDocuments) {
+        public static double precision(Article article, List<ArticleSimilarity> retrievedDocuments) {
         	int relevantDocumentsFound = 0;
-        	for (Article a : retrievedDocuments)
-        		if (article.getCites().contains(a));
-        			relevantDocumentsFound++;
+         
+         for (int i=0; i<Library.getInstance().getCitationsMatrix()[0].length; i++)
+            for (ArticleSimilarity as : retrievedDocuments)
+               if (Library.getInstance().getCitationsMatrix()[i][Library.getInstance().getArticleList().indexOf(as.getArticle())])
+                  relevantDocumentsFound++;
+
         	return relevantDocumentsFound / retrievedDocuments.size();
         }
         
@@ -152,11 +156,13 @@ public class MetricUtils {
          * recall = | {relevant documents} intersecato {retrieved documents} |  /  | {relevan documents} |
          * @return
          */
-        public static double recall(Article article, List<Article> retrievedDocuments) {
+        public static double recall(Article article, List<ArticleSimilarity> retrievedDocuments) {           
         	int relevantDocumentsFound = 0;
-        	for (Article a : retrievedDocuments)
-        		if (article.getCites().contains(a));
-        			relevantDocumentsFound++;
+         
+         for (int i=0; i<Library.getInstance().getCitationsMatrix()[0].length; i++)
+            for (ArticleSimilarity as : retrievedDocuments)
+               if (Library.getInstance().getCitationsMatrix()[i][Library.getInstance().getArticleList().indexOf(as.getArticle())])
+                  relevantDocumentsFound++;
         	return article.getCitesStringList().size() != 0 ? relevantDocumentsFound / article.getCitesStringList().size() : 0;
         }
         
@@ -165,7 +171,7 @@ public class MetricUtils {
          * Can be interpreted as a weighted average of the precision and recall.
          * @return a number between 0 and 1, where 1 is best and 0 is worst
          */
-        public static double fScore(Article article, List<Article> retrievedDocuments) {
+        public static double fScore(Article article, List<ArticleSimilarity> retrievedDocuments) {
         	double precision = precision(article, retrievedDocuments);
         	double recall = recall(article, retrievedDocuments);
         	return 2 * (precision * recall) / (precision + recall);

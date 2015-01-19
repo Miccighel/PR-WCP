@@ -32,5 +32,13 @@ public class Bibliography {
 		for (Article a : articlesSet)
 			updateVector(a.getKeyphrasesVector());
 	}
+   
+   public Set<Article> getArticles() {
+      return this.articlesSet;
+   }
+   
+   public boolean[] getVector() {
+      return this.keyphrasesVector;
+   }
 
 }
