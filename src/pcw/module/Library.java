@@ -44,15 +44,12 @@ public class Library {
 			SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
 			try {
 				SAXParser saxParser = saxParserFactory.newSAXParser();
-				saxParser.parse(new File("data/dataset2.xml"), new LoadArticles(this)); // TODO cambiare col file del dataset
+				saxParser.parse(new File("data/dataset3final.xml"), new LoadArticles(this)); // TODO cambiare col file del dataset
 			}
 			catch (ParserConfigurationException | SAXException | IOException e) {
 				e.printStackTrace();
 			}
-			System.out.println("Completato, miglioro gli articoli della lista...");
-			improveArticles();
-			System.out.println("Miglioramento completato");
-			this.saveArticles();
+			System.out.println("Completato, con "+this.articles.size()+" articoli");
 		}
 		
 		if (!(new File("data/keyphrasesMatrix.ser")).exists() 
@@ -63,17 +60,14 @@ public class Library {
 			buildCitationsMatrix(articles);
 			System.out.println("Matrice delle citazioni costruita");
 			this.saveMatrix();
+         System.out.println("Salvataggio matrici completato");
 			this.saveArticles();
+         System.out.println("Salvataggio articoli completato");
 		}
 		else
 			loadMatrixes();
 	}
 	
-	private void improveArticles() {
-		for (Article a : this.articles)
-			for (String citTitle : a.getCitesStringList())
-				a.addCite(this.getArticleFromTitle(citTitle));
-	}
 	private Article getArticleFromTitle(String title) {
 		for (Article article : this.articles)
 			if (article.getTitle().equalsIgnoreCase(title))
@@ -146,27 +140,33 @@ public class Library {
 	 * cite4           1            0            0
 	 */
 	private void buildCitationsMatrix(List<Article> list) {
-		// TODO: fare la matrice quadrata prendendo solo i campi title
 		ArrayList<String> allCitations = new ArrayList<String>();
 		Set<String> citationsSet = new HashSet<String>();
 		int count = 0;
+      this.citationsMatrix = new boolean[list.size()][list.size()];
 		
-		for (Article article : list)
-			for (String cite : article.getCitesStringList())
-				if (!citationsSet.add(cite)) count++;
-		System.out.println("citazioni in comune: " + count);
-		allCitations.addAll(citationsSet);
-		Collections.sort(allCitations);
-		
-		citationsMatrix = new boolean[list.size()][allCitations.size()]; // java inizializza tutta la matrice a false
-		
-		// costruisco la matrice
-		for (int i=0; i<list.size(); i++) {
-			Article article = list.get(i);
-			List<String> citationsList = article.getCitesStringList();
-			for (int j=0; j<allCitations.size(); j++)
-				citationsMatrix[i][j] = citationsList.contains(allCitations.get(j));
-		}
+      System.out.println(list.get(0).toString());
+      
+      for (int i=0; i<list.size(); i++) {
+         Article article = this.articles.get(i);
+         for (String cite : article.getCitesStringList()) {
+            Article a = this.getArticleFromTitle(cite);
+            if (a != null) {
+               this.citationsMatrix[i][this.getIndexFromArticle(a)] = true;
+               this.citationsMatrix[this.getIndexFromArticle(a)][i] = true;
+               article.addCite(a);
+               count++;
+            }
+         }
+      }
+      
+      System.out.println("metodo completato, " + count + " citazioni in comune");
+      
+      int q = 0;
+      for (Article a : this.articles)
+         if (a.getCites().size() == 0)
+            q++;
+      System.out.println(q+" articoli non hanno citazioni");
 	}
 
 
