@@ -3,49 +3,24 @@ package pcw.module;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import pcw.user.Bibliography;
 
 import pcw.utils.Article;
-import pcw.utils.ArticleSimilarity;
 
 public class Recommendation {
 	
-   
-   	/**
-	 * Restituisce gli articoli piu' simili a quelli passati in ingresso ordinati per somiglianza, rimuovendo
-    * quelli gia' presenti nella bibliografia
-	 */
-	public static List<ArticleSimilarity> getNeighbours(Bibliography bibliography, int numOfNeighbours) {
-		double[] similarities = new double[Library.getInstance().getArticleList().size()];
-		
-		for (int i=0; i<Library.getInstance().getKeyphrasesMatrix().length; i++)
-			similarities[i] = similarity(bibliography.getVector(), Library.getInstance().getKeyphrasesMatrix()[i]);
-		
-		List<ArticleSimilarity> out = new ArrayList<ArticleSimilarity>();
-		for (int i=0; i<numOfNeighbours; i++) {
-			int index = indexOfMax(similarities);
-         Article article = Library.getInstance().getArticleList().get(index);
-         if (!bibliography.getArticles().contains(article))
-            out.add(new ArticleSimilarity(article, similarities[index]));
-			similarities[index] = -1;
-		}
-		
-		return out;
-	}
 	/**
 	 * Restituisce gli articoli piu' simili a quelli passati in ingresso ordinati per somiglianza
 	 */
-	public static List<ArticleSimilarity> getNeighbours(boolean[] userVector, int numOfNeighbours) {
+	public static List<Article> getNeighbours(boolean[] userVector, int numOfNeighbours) {
 		double[] similarities = new double[userVector.length];
 		
 		for (int i=0; i<Library.getInstance().getKeyphrasesMatrix().length; i++)
 			similarities[i] = similarity(userVector, Library.getInstance().getKeyphrasesMatrix()[i]);
 		
-		List<ArticleSimilarity> out = new ArrayList<ArticleSimilarity>();
+		List<Article> out = new ArrayList<Article>();
 		for (int i=0; i<numOfNeighbours; i++) {
 			int index = indexOfMax(similarities);
-         Article article = Library.getInstance().getArticleList().get(index);
-         out.add(new ArticleSimilarity(article, similarities[index]));
+			out.add(Library.getInstance().getArticleList().get(index));
 			similarities[index] = -1;
 		}
 		
@@ -54,7 +29,7 @@ public class Recommendation {
 	/**
 	 * Restituisce gli articoli piu' simili a quelli passati in ingresso ordinati per somiglianza
 	 */
-	public static List<ArticleSimilarity> getNeighbours(Article article, int numOfNeighbours) {
+	public static List<Article> getArticleNeighbours(Article article, int numOfNeighbours) {
 		double[] similarities = new double[article.getKeyphrasesVector().length];
 		
 		for (int i=0; i<Library.getInstance().getKeyphrasesMatrix().length; i++)
@@ -62,17 +37,56 @@ public class Recommendation {
 		
 		similarities[Library.getInstance().getIndexFromArticle(article)] = -2; // evita che dia in output se stesso
 		
-		List<ArticleSimilarity> out = new ArrayList<ArticleSimilarity>();
+		List<Article> out = new ArrayList<Article>();
 		for (int i=0; i<numOfNeighbours; i++) {
 			int index = indexOfMax(similarities);
-         Article a = Library.getInstance().getArticleList().get(index);
-         out.add(new ArticleSimilarity(a, similarities[index]));
+			out.add(Library.getInstance().getArticleList().get(index));
 			similarities[index] = -1;
 		}
 		
 		return out;
 	}
 	
+	/**
+	 * Restituisce un array ordinato di valori di similarita', serve per la dcg e ndcg
+	 * @param userVector Il vettore di cui cerco i vettori simili
+	 * @param numOfNeighbours Il numero di risultati che cerco
+	 * @return Un array ordinato di double compresi tra 0 e 1 lungo numOfNeighbours
+	 */
+	public static double[] getSortedNeighboursSimilarity(boolean[] userVector, int numOfNeighbours) {
+		ArrayList<Double> similarities = new ArrayList<Double>();
+		
+		for (int i=0; i<numOfNeighbours; i++)
+			similarities.add(similarity(userVector, Library.getInstance().getKeyphrasesMatrix()[i]));
+		Collections.sort(similarities);
+		Collections.reverse(similarities);
+		
+		double[] out = new double[similarities.size()]; // stupido java
+		for (int i=0; i<out.length; i++)
+			out[i] = similarities.get(i);
+		return out;
+	}
+	/**
+	 * Restituisce un array ordinato di valori di similarita', serve per la dcg e ndcg
+	 * @param userVector Il vettore di cui cerco i vettori simili
+	 * @param numOfNeighbours Il numero di risultati che cerco
+	 * @return Un array ordinato di double compresi tra 0 e 1 lungo numOfNeighbours
+	 */
+	public static double[] getArticleSortedNeighboursSimilarity(Article article, int numOfNeighbours) {
+		ArrayList<Double> similarities = new ArrayList<Double>();
+		
+		for (int i=0; i<numOfNeighbours; i++)
+			similarities.add(similarity(article.getKeyphrasesVector(), Library.getInstance().getKeyphrasesMatrix()[i]));
+		
+		similarities.set(Library.getInstance().getIndexFromArticle(article), -2D);
+		Collections.sort(similarities);
+		Collections.reverse(similarities);
+		
+		double[] out = new double[similarities.size()]; // stupido java
+		for (int i=0; i<out.length; i++)
+			out[i] = similarities.get(i);
+		return out;
+	}
 	
 	/**
 	 * Cosine Similarity: cosine(theta) = A . B / ||A|| ||B||
@@ -86,10 +100,10 @@ public class Recommendation {
 	 * @return
 	 */
 	public static int evaluateRelevanceBasedOnReference(Article article, int numOfResults) {
-		List<ArticleSimilarity> list = getNeighbours(article.getKeyphrasesVector(), numOfResults);
+		List<Article> list = getNeighbours(article.getKeyphrasesVector(), numOfResults);
 		int common = 0;
-		for (ArticleSimilarity a : list)
-			if (article.getCites().contains(a.getArticle()))
+		for (Article a : list)
+			if (article.getCites().contains(a))
 				common++;
 		return common;
 	}

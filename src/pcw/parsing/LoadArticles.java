@@ -53,12 +53,8 @@ public class LoadArticles extends DefaultHandler {
 			article.setEe(new String(ch, start, length));
 			flagEe = false;
 		}
-      else if (flagAbstract) {
-         article.setAbstract(new String(ch, start, length));
-         flagAbstract = false;
-      }
 		else if (flagKp) {
-			article.addKeyphrase((new String(ch, start, length)).toLowerCase());
+			article.addKeyphrase(new String(ch, start, length));
 			flagKp = false;
 		}
 		else if (flagCite) {
@@ -72,7 +68,7 @@ public class LoadArticles extends DefaultHandler {
 			articlesList.add(article);
 			article = new Article();
 		}
-		if (qName.equals("dataset"))
+		if (qName.equals("dblp"))
 			this.library.setArticleList(articlesList);
 	}
 
